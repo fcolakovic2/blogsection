@@ -1,6 +1,7 @@
 import 'package:blog/providers/page_index.dart';
 import 'package:blog/utils/style/styles.dart';
 import 'package:blog/view/blog_post/pages/blog_post.dart';
+import 'package:blog/view/blog_screen/pages/blog_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -36,7 +37,7 @@ class MyApp extends StatelessWidget {
             child: widget,
           );
         },
-        home: BlogPost(),
+        home: BlogScreen(),
       ),
     );
   }
