@@ -1,4 +1,4 @@
-import 'package:blog/card.dart';
+import 'package:blog/view/blog_screen/widgets/card.dart';
 import 'package:blog/view/blog_screen/widgets/listview_custom.dart';
 import 'package:flutter/material.dart';
 
