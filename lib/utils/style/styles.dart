@@ -11,12 +11,18 @@ TextStyle appBarText = TextStyle(
 );
 
 TextStyle itemSlider = TextStyle(
-  fontWeight: FontWeight.w500,
-  fontFamily: "Inter",
+  fontWeight: FontWeight.w700,
+  fontFamily: "Averta",
   fontSize: 14.sp,
   letterSpacing: 0.05,
 );
 
+TextStyle itemSlider2 = TextStyle(
+  fontWeight: FontWeight.w400,
+  fontFamily: "Averta",
+  fontSize: 14.sp,
+  letterSpacing: 0.05,
+);
 BoxDecoration appBarBorder() {
   return BoxDecoration(
     border: Border(

@@ -2,7 +2,7 @@ import 'package:blog/view/blog_screen/widgets/tabbar_custom.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-SizedBox tabBarReusable(ordersList) {
+SizedBox tabBarReusable(ordersList, _tabController) {
   return SizedBox(
     height: ScreenUtil().setHeight(70),
     child: AppBar(
@@ -11,7 +11,7 @@ SizedBox tabBarReusable(ordersList) {
       bottom: PreferredSize(
         preferredSize: const Size.fromHeight(81),
         child: Container(
-          child: TabBarCustom(ordersList),
+          child: TabBarCustom(ordersList, _tabController),
         ),
       ),
     ),

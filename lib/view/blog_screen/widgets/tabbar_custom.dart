@@ -7,8 +7,8 @@ import 'package:provider/provider.dart';
 
 // ignore: must_be_immutable
 class TabBarCustom extends StatefulWidget {
-  var lista;
-  TabBarCustom(this.lista);
+  var lista, _tabController;
+  TabBarCustom(this.lista, this._tabController);
   @override
   _TabBarCustomState createState() => _TabBarCustomState();
 }
@@ -24,6 +24,10 @@ class _TabBarCustomState extends State<TabBarCustom>
   Widget build(BuildContext context) {
     var controllers = context.watch<PageIndexProvider>();
 
+    widget._tabController.addListener(() {
+      controllers.changeIndex(widget._tabController.index);
+    });
+
     return Container(
       decoration: appBarBorder(),
       child: Align(
@@ -33,6 +37,7 @@ class _TabBarCustomState extends State<TabBarCustom>
           child: Container(
             width: MediaQuery.of(context).size.width,
             child: TabBar(
+              controller: widget._tabController,
               labelColor: const Color(0xFF373737),
               unselectedLabelColor: const Color(0xFF373737).withOpacity(0.7),
               isScrollable: true,
@@ -47,7 +52,8 @@ class _TabBarCustomState extends State<TabBarCustom>
               labelPadding: EdgeInsets.symmetric(vertical: 0),
               tabs: List<Widget>.generate(
                 widget.lista.length,
-                (counter) => tabElement(widget.lista[counter]),
+                (counter) => tabElement(
+                    widget._tabController.index, widget.lista[counter]),
               ),
             ),
           ),

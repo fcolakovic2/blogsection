@@ -1,14 +1,16 @@
+import 'package:blog/utils/dummy_data/dummy_data.dart';
 import 'package:blog/utils/style/styles.dart';
 import 'package:flutter/material.dart';
 
-Widget tabElement(text) {
+Widget tabElement(index, text) {
+  print("$index index - ${tabList[index]} tablist");
   return Align(
     alignment: Alignment.centerLeft,
     child: Container(
       padding: const EdgeInsets.only(right: 35, bottom: 20),
       child: Text(
         text,
-        style: itemSlider,
+        style: tabList[index] == text ? itemSlider : itemSlider2,
       ),
     ),
   );

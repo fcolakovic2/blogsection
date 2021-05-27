@@ -1,4 +1,4 @@
-import 'package:blog/providers/page_index.dart';
+import 'package:blog/utils/dummy_data/dummy_data.dart';
 import 'package:blog/view/blog_screen/widgets/tabbar_reusable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -25,13 +25,15 @@ class TabBarSlider extends StatefulWidget {
   _TabBarSliderState createState() => _TabBarSliderState();
 }
 
-class _TabBarSliderState extends State<TabBarSlider> {
+class _TabBarSliderState extends State<TabBarSlider>
+    with TickerProviderStateMixin {
   var _scrollController = ScrollController();
-  // int index = 0;
+  TabController _tabController;
 
   @override
   void initState() {
     super.initState();
+    _tabController = TabController(vsync: this, length: widget.list.length);
   }
 
   @override
@@ -52,17 +54,18 @@ class _TabBarSliderState extends State<TabBarSlider> {
             Container(
               child: widget.widgetsBefore,
             ),
-            tabBarReusable(widget.list),
+            tabBarReusable(widget.list, _tabController),
             Container(
               height: MediaQuery.of(context).size.height -
                   AppBar().preferredSize.height -
                   MediaQuery.of(context).padding.top -
-                  120.sp,
+                  104.sp,
               child: TabBarView(
+                controller: _tabController,
                 physics: BouncingScrollPhysics(),
                 children: List<Widget>.generate(
-                  4,
-                  (counter) => Text("s"),
+                  widgetsList.length,
+                  (counter) => widgetsList[counter],
                 ),
               ),
             )
