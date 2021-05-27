@@ -23,6 +23,7 @@ TextStyle itemSlider2 = TextStyle(
   fontSize: 14.sp,
   letterSpacing: 0.05,
 );
+
 BoxDecoration appBarBorder() {
   return BoxDecoration(
     border: Border(
@@ -52,3 +53,17 @@ ThemeData themeDataStyle() {
     primarySwatch: Colors.blue,
   );
 }
+
+TextStyle cardTitleStyle = TextStyle(
+  fontWeight: FontWeight.w600,
+  fontFamily: "Averta",
+  fontSize: 16.sp,
+  color: Color(0xFF373737),
+);
+
+TextStyle cardSubTitleStyle = TextStyle(
+  fontWeight: FontWeight.w400,
+  fontFamily: "Averta",
+  fontSize: 13.sp,
+  color: Color(0xFF373737).withOpacity(0.6),
+);
