@@ -31,7 +31,7 @@ class _TabBarCustomState extends State<TabBarCustom>
         child: Container(
           margin: const EdgeInsets.only(left: 20.0, right: .0),
           child: Container(
-            width: MediaQuery.of(context).size.width / 1.1,
+            width: MediaQuery.of(context).size.width,
             child: TabBar(
               labelColor: const Color(0xFF373737),
               unselectedLabelColor: const Color(0xFF373737).withOpacity(0.7),
