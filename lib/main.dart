@@ -1,3 +1,4 @@
+import 'package:blog/kartica.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -22,7 +23,10 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: KarticaWidget(
+          "assets/images/testnaslika.png",
+          "Lemon & Herb Chicken",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra at turpis fusce a laoreet elementum naSAHUDHASJDJASDJASHDHAHSDHASGDHGAHZDGSAZHDGHAHZGDHASDASDASBDHABSDHBASHDBAHBDHBDUASDHDHDHSSDHSDHJDSHDSHHDSHSDHSDHDHHDHDSHDHDHDHSSHD"),
     );
   }
 }
