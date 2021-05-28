@@ -303,6 +303,8 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.8.0"
+<<<<<<< HEAD
+=======
   sqflite:
     dependency: transitive
     description:
@@ -317,6 +319,7 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.0+2"
+>>>>>>> 053bc8a0abeed1d680e0653bdd784ff0b4d087a0
   stack_trace:
     dependency: transitive
     description:
