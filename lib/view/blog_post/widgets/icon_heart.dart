@@ -1,3 +1,4 @@
+import 'package:blog/third_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -17,7 +18,10 @@ class IconHeart extends StatelessWidget {
           color: Color(0xff373737),
         ),
         onPressed: () {
-          // Navigator.pop(context);
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => ErrorScreen()),
+          );
         },
       ),
     );
