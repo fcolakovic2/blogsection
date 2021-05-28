@@ -1,7 +1,11 @@
 import 'package:blog/utils/style/styles.dart';
+import 'package:blog/view/blog_post/widgets/category.dart';
+import 'package:blog/view/blog_post/widgets/circle_avatar_and_text.dart';
+import 'package:blog/view/blog_post/widgets/rounded_corner_image.dart';
+import 'package:blog/view/blog_post/widgets/social_icons.dart';
+import 'package:blog/view/blog_post/widgets/subtitle.dart';
+import 'package:blog/view/blog_post/widgets/title.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class BlogPostLayout extends StatefulWidget {
   @override
@@ -15,75 +19,10 @@ class _BlogPostLayoutState extends State<BlogPostLayout> {
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
-        Padding(
-          padding: const EdgeInsets.only(bottom: 10.0),
-          child: Text(
-            "EXPERIENCES",
-            style: blogPostCategory,
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(bottom: 20.0),
-          child: Text(
-            "Three Healthy and Easy Japanese Dishes You Can Make at Home",
-            style: appBarText,
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(bottom: 30),
-          child: Text(
-            "How to make a full ichiju-sansai meal in less than 30 minutes",
-            style: blogPostSub,
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(bottom: 30.0),
-          child: Row(
-            children: [
-              Column(
-                children: [
-                  Container(
-                    width: ScreenUtil().setWidth(50),
-                    height: ScreenUtil().setHeight(50),
-                    child: CircleAvatar(
-                      backgroundImage: NetworkImage(
-                          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy2Vzf90CMXNaJzJ6kKGm-nGNhmYIhkDGEFV6SzvfcuEY5MlvGLFfPHFlOwxVTWuqFZm0&usqp=CAU'),
-                      backgroundColor: Colors.transparent,
-                    ),
-                  ),
-                ],
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 10.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "By John Doe",
-                      style: avatarByWho,
-                    ),
-                    Row(
-                      children: [
-                        Text(
-                          "Apr 29 ",
-                          style: avatarSecondLine,
-                        ),
-                        Text(
-                          ". ",
-                          style: avatarSecondLine,
-                        ),
-                        Text(
-                          "3 min read",
-                          style: avatarSecondLine,
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ),
+        Category(),
+        Titlee(),
+        SubTitle(),
+        CircleAvatarAndText(),
         Padding(
           padding: const EdgeInsets.only(bottom: 30.0),
           child: Text(
@@ -91,21 +30,8 @@ class _BlogPostLayoutState extends State<BlogPostLayout> {
             style: avatarByWho,
           ),
         ),
-        Padding(
-          padding: const EdgeInsets.only(bottom: 30.0),
-          child: Container(
-            width: ScreenUtil().screenWidth,
-            height: ScreenUtil().setHeight(211),
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                fit: BoxFit.cover,
-                image: NetworkImage(
-                    "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y29va3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80"),
-              ),
-              borderRadius: BorderRadius.all(Radius.circular(16.0)),
-            ),
-          ),
-        ),
+        RoundedCornerImage(
+            "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y29va3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80"),
         Padding(
           padding: const EdgeInsets.only(bottom: 45.0),
           child: Text(
@@ -120,21 +46,7 @@ class _BlogPostLayoutState extends State<BlogPostLayout> {
             style: avatarByWho,
           ),
         ),
-        Padding(
-          padding: const EdgeInsets.only(bottom: 30.0),
-          child: Container(
-            width: ScreenUtil().screenWidth,
-            height: ScreenUtil().setHeight(211),
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                fit: BoxFit.cover,
-                image:
-                    NetworkImage("https://wallpapercave.com/wp/wp3495545.jpg"),
-              ),
-              borderRadius: BorderRadius.all(Radius.circular(16.0)),
-            ),
-          ),
-        ),
+        RoundedCornerImage("https://wallpapercave.com/wp/wp3495545.jpg"),
         Padding(
           padding: const EdgeInsets.only(bottom: 32.0),
           child: Text(
@@ -142,79 +54,7 @@ class _BlogPostLayoutState extends State<BlogPostLayout> {
             style: avatarByWho,
           ),
         ),
-        Padding(
-          padding: const EdgeInsets.only(bottom: 80.0),
-          child: Row(
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(right: 20.0),
-                child: Container(
-                  width: ScreenUtil().setWidth(22),
-                  height: ScreenUtil().setHeight(22),
-                  child: SvgPicture.asset(
-                    "assets/images/facebook.svg",
-                    color: Color(0xff373737),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(right: 20.0),
-                child: Container(
-                  width: ScreenUtil().setWidth(22),
-                  height: ScreenUtil().setHeight(22),
-                  child: SvgPicture.asset(
-                    "assets/images/google.svg",
-                    color: Color(0xff373737),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(right: 20.0),
-                child: Container(
-                  width: ScreenUtil().setWidth(22),
-                  height: ScreenUtil().setHeight(22),
-                  child: SvgPicture.asset(
-                    "assets/images/twitter.svg",
-                    color: Color(0xff373737),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(right: 20.0),
-                child: Container(
-                  width: ScreenUtil().setWidth(22),
-                  height: ScreenUtil().setHeight(22),
-                  child: SvgPicture.asset(
-                    "assets/images/linkedin.svg",
-                    color: Color(0xff373737),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(right: 20.0),
-                child: Container(
-                  width: ScreenUtil().setWidth(22),
-                  height: ScreenUtil().setHeight(22),
-                  child: SvgPicture.asset(
-                    "assets/images/whatsapp.svg",
-                    color: Color(0xff373737),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(right: 20.0),
-                child: Container(
-                  width: ScreenUtil().setWidth(22),
-                  height: ScreenUtil().setHeight(22),
-                  child: SvgPicture.asset(
-                    "assets/images/Ellipse 188.svg",
-                    color: Color(0xff373737),
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
+        SocialIcons(),
       ],
     );
   }
