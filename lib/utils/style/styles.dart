@@ -38,9 +38,9 @@ BoxDecoration appBarBorder() {
 void setSystemUIOverlayStyle() {
   return SystemChrome.setSystemUIOverlayStyle(
     SystemUiOverlayStyle.dark.copyWith(
-      statusBarColor: Colors.white,
-      statusBarIconBrightness: Brightness.dark,
-      statusBarBrightness: Brightness.dark,
+      statusBarColor: Colors.transparent,
+      statusBarIconBrightness: Brightness.light,
+      statusBarBrightness: Brightness.light,
     ), /* set Status bar icon color in iOS. */
   );
 }
