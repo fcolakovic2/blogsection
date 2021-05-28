@@ -10,7 +10,7 @@ class CircleAvatarAndText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 30.0),
+      padding: const EdgeInsets.only(bottom: 30.0, right: 20),
       child: Row(
         children: [
           Column(

@@ -5,23 +5,28 @@ import 'package:flutter/material.dart';
 class SliverSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
-      slivers: <Widget>[
-        appBarCustom2(),
-        SliverList(
-          delegate: SliverChildBuilderDelegate(
-            (BuildContext context, int index) {
-              return Container(
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 20, right: 20),
-                  child: BlogPostLayout(),
-                ),
-              );
-            },
-            childCount: 1,
+    return NotificationListener<OverscrollIndicatorNotification>(
+      onNotification: (overscroll) {
+        overscroll.disallowGlow();
+      },
+      child: CustomScrollView(
+        slivers: <Widget>[
+          appBarCustom2(),
+          SliverList(
+            delegate: SliverChildBuilderDelegate(
+              (BuildContext context, int index) {
+                return Container(
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 20),
+                    child: BlogPostLayout(),
+                  ),
+                );
+              },
+              childCount: 1,
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

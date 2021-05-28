@@ -9,7 +9,7 @@ class Category extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 10.0),
+      padding: const EdgeInsets.only(bottom: 10.0, right: 20),
       child: Text(
         "EXPERIENCES",
         style: blogPostCategory,
