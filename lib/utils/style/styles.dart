@@ -2,6 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+TextStyle relatedposts = TextStyle(
+  fontFamily: "Averta CY",
+  fontWeight: FontWeight.w700,
+  color: Color(0xff373737),
+  fontSize: 26,
+  letterSpacing: -0.5,
+  fontStyle: FontStyle.normal,
+);
+
 TextStyle appBarText = TextStyle(
   fontFamily: "Averta",
   fontWeight: FontWeight.w700,
