@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 class ListViewCustomService extends ListViewCustomInterface {
   @override
-  Widget topOffset(counter, category, pom) {
+  Widget topOffset(counter, category) {
     if (cardsList[counter].category == category || category == null) {
       if (pom == 0) {
         pom = 1;

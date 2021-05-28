@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 
 NotificationListener<OverscrollIndicatorNotification> listViewCustom(cardsList,
     [category]) {
-  var pom = 0;
   return NotificationListener<OverscrollIndicatorNotification>(
     // ignore: missing_return
     onNotification: (overscroll) {
@@ -12,8 +11,8 @@ NotificationListener<OverscrollIndicatorNotification> listViewCustom(cardsList,
     child: ListView(
       children: List<Widget>.generate(
         cardsList.length,
-        (counter) => ListViewCustomViewModel()
-            .topOffsetViewModel(counter, category, pom),
+        (counter) =>
+            ListViewCustomViewModel().topOffsetViewModel(counter, category),
       ),
     ),
   );
