@@ -3,8 +3,8 @@ import 'package:blog/utils/style/styles.dart';
 import 'package:blog/view/blog_post/pages/blog_post.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-// import 'package:cached_network_image/cached_network_image.dart';
 
+// ignore: must_be_immutable
 class CardWidget extends StatefulWidget {
   String image, title, subtitle, category;
   CardWidget(this.image, this.title, this.subtitle, this.category);

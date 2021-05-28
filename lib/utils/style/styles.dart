@@ -67,3 +67,34 @@ TextStyle cardSubTitleStyle = TextStyle(
   fontSize: 13.sp,
   color: Color(0xFF373737).withOpacity(0.6),
 );
+
+TextStyle blogPostCategory = TextStyle(
+  fontWeight: FontWeight.w400,
+  fontFamily: "Averta",
+  fontSize: 11.sp,
+  color: Color(0xFF373737),
+);
+
+TextStyle blogPostSub = TextStyle(
+  fontWeight: FontWeight.w400,
+  fontFamily: "Averta",
+  fontStyle: FontStyle.normal,
+  fontSize: 22.sp,
+  color: Color(0xFF373737),
+);
+
+TextStyle avatarByWho = TextStyle(
+  fontWeight: FontWeight.w400,
+  fontStyle: FontStyle.normal,
+  fontFamily: "Averta",
+  fontSize: 16.sp,
+  color: Color(0xFF373737),
+);
+
+TextStyle avatarSecondLine = TextStyle(
+  fontWeight: FontWeight.w400,
+  fontStyle: FontStyle.normal,
+  fontFamily: "Averta",
+  fontSize: 14.sp,
+  color: Color(0xFF373737).withOpacity(0.7),
+);
