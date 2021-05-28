@@ -19,6 +19,8 @@ class _CardWidgetState extends State<CardWidget> {
       padding: const EdgeInsets.only(left: 0.0, right: 0.0, bottom: 25),
       child: GestureDetector(
         onTap: () {
+          // GetRequestsService().fetchImages();
+
           Navigator.of(context).push(
             createRouteToDown(
               BlogPost(),

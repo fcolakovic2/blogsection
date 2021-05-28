@@ -6,6 +6,7 @@ class SliverSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return NotificationListener<OverscrollIndicatorNotification>(
+      // ignore: missing_return
       onNotification: (overscroll) {
         overscroll.disallowGlow();
       },
