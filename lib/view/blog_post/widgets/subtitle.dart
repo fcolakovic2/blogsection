@@ -9,7 +9,7 @@ class SubTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 30),
+      padding: const EdgeInsets.only(bottom: 30, right: 20),
       child: Text(
         "How to make a full ichiju-sansai meal in less than 30 minutes",
         style: blogPostSub,

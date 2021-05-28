@@ -65,7 +65,10 @@ class _TabBarSliderState extends State<TabBarSlider>
                 physics: BouncingScrollPhysics(),
                 children: List<Widget>.generate(
                   widgetsList.length,
-                  (counter) => widgetsList[counter],
+                  (counter) => Padding(
+                    padding: const EdgeInsets.only(left: 20.0, right: 20.0),
+                    child: widgetsList[counter],
+                  ),
                 ),
               ),
             )
