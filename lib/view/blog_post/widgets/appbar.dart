@@ -41,7 +41,7 @@ Widget appBarCustom2() {
             child: Image(
               fit: BoxFit.cover,
               image: NetworkImage(
-                "https://media.istockphoto.com/photos/top-view-table-full-of-food-picture-id1220017909?k=6&m=1220017909&s=170667a&w=0&h=Zy_NqTbEluSW0T667IHW7DVlpQih70V45k-rgeFt6Oo=",
+                "https://www.teahub.io/photos/full/253-2538486_slider3-restaurant-food-pic-hd.jpg",
               ),
             ),
             top: 0,
