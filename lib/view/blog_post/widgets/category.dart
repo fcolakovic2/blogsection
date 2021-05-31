@@ -2,16 +2,15 @@ import 'package:blog/utils/style/styles.dart';
 import 'package:flutter/material.dart';
 
 class Category extends StatelessWidget {
-  const Category({
-    Key key,
-  }) : super(key: key);
+  var category;
+  Category(this.category);
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 10.0, right: 20),
       child: Text(
-        "EXPERIENCES",
+        category,
         style: blogPostCategory,
       ),
     );

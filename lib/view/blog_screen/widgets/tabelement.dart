@@ -3,7 +3,6 @@ import 'package:blog/utils/style/styles.dart';
 import 'package:flutter/material.dart';
 
 Widget tabElement(index, text) {
-  print("$index index - ${tabList[index]} tablist");
   return Align(
     alignment: Alignment.centerLeft,
     child: Container(

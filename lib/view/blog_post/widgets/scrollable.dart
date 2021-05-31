@@ -27,6 +27,7 @@ class _RelatedPostsState extends State<RelatedPosts> {
           Container(
             height: ScreenUtil().setHeight(434),
             child: NotificationListener<OverscrollIndicatorNotification>(
+              // ignore: missing_return
               onNotification: (overscroll) {
                 overscroll.disallowGlow();
               },

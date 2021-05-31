@@ -2,6 +2,8 @@ import 'package:blog/view/blog_post/widgets/sliver_section.dart';
 import 'package:flutter/material.dart';
 
 class BlogPost extends StatefulWidget {
+  var text, index, category;
+  BlogPost(this.text, this.index, this.category);
   @override
   _BlogPostState createState() => _BlogPostState();
 }
@@ -12,8 +14,7 @@ class _BlogPostState extends State<BlogPost> {
     return Scaffold(
       backgroundColor: Colors.white,
       extendBodyBehindAppBar: true,
-      // appBar: appBarCustom2(context),
-      body: SliverSection(),
+      body: SliverSection(widget.text, widget.index, widget.category),
     );
   }
 }
