@@ -1,4 +1,4 @@
-import 'package:blog/scrollable.dart';
+import 'package:blog/view/blog_post/widgets/scrollable.dart';
 import 'package:blog/utils/style/styles.dart';
 import 'package:blog/view/blog_post/widgets/category.dart';
 import 'package:blog/view/blog_post/widgets/circle_avatar_and_text.dart';
