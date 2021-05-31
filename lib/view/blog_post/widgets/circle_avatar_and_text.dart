@@ -1,12 +1,11 @@
 import 'package:blog/utils/style/styles.dart';
+import 'package:blog/view_model/get_requests_vm.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CircleAvatarAndText extends StatelessWidget {
-  const CircleAvatarAndText({
-    Key key,
-  }) : super(key: key);
-
+  var index;
+  CircleAvatarAndText(this.index);
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -31,10 +30,22 @@ class CircleAvatarAndText extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  "By John Doe",
-                  style: avatarByWho,
+                FutureBuilder<dynamic>(
+                  future: GetRequestsViewModel().getDataImagesViewModel(index),
+                  builder: (BuildContext context, var snapshot) {
+                    if (snapshot.hasData) {
+                      return Text(
+                        "By ${snapshot.data["author"]}",
+                        style: avatarByWho,
+                      );
+                    }
+                    return Center(child: CircularProgressIndicator());
+                  },
                 ),
+                // Text(
+                //   "By $author",
+                //   style: avatarByWho,
+                // ),
                 Row(
                   children: [
                     Text(

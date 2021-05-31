@@ -9,8 +9,8 @@ import 'package:blog/view/blog_post/widgets/title.dart';
 import 'package:flutter/material.dart';
 
 class BlogPostLayout extends StatefulWidget {
-  var text, index;
-  BlogPostLayout(this.text, this.index);
+  var text, index, category;
+  BlogPostLayout(this.text, this.index, this.category);
   @override
   _BlogPostLayoutState createState() => _BlogPostLayoutState();
 }
@@ -18,14 +18,15 @@ class BlogPostLayout extends StatefulWidget {
 class _BlogPostLayoutState extends State<BlogPostLayout> {
   @override
   Widget build(BuildContext context) {
+    print(widget.index);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
-        Category(),
-        Titlee(),
-        SubTitle(),
-        CircleAvatarAndText(),
+        Category(widget.category),
+        Titlee(widget.text[0].substring(0, 60)),
+        SubTitle(widget.text[0].substring(0, 40)),
+        CircleAvatarAndText(widget.index),
         Padding(
           padding: const EdgeInsets.only(bottom: 30.0, right: 20),
           child: Text(

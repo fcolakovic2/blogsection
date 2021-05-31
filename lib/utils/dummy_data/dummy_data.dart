@@ -7,16 +7,16 @@ var pom = 0;
 
 List<String> tabList = ["ALL POSTS", "EXPERIENCES", "RECIPES", "NEWS"];
 List<CardWidget> cardsList = [
-  CardWidget("Experiences", 1),
-  CardWidget("Recipes", 2),
-  CardWidget("News", 3),
-  CardWidget("Experiences", 4),
-  CardWidget("News", 5),
+  CardWidget("EXPERIENCES", 1),
+  CardWidget("RECIPES", 2),
+  CardWidget("NEWS", 3),
+  CardWidget("EXPERIENCES", 4),
+  CardWidget("NEWS", 5),
 ];
 
 List<Widget> widgetsList = [
   listViewCustom(cardsList),
-  listViewCustom(cardsList, "Experiences"),
-  listViewCustom(cardsList, "Recipes"),
-  listViewCustom(cardsList, "News"),
+  listViewCustom(cardsList, "EXPERIENCES"),
+  listViewCustom(cardsList, "RECIPES"),
+  listViewCustom(cardsList, "NEWS"),
 ];

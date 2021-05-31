@@ -24,7 +24,7 @@ class _CardWidgetState extends State<CardWidget> {
         onTap: () {
           Navigator.of(context).push(
             createRouteToDown(
-              BlogPost(widget.text, widget.index),
+              BlogPost(widget.text, widget.index, widget.category),
             ),
           );
         },
