@@ -1,15 +1,16 @@
 import 'package:blog/utils/shared/animations.dart';
 import 'package:blog/utils/style/styles.dart';
 import 'package:blog/view/blog_post/pages/blog_post.dart';
+import 'package:blog/view/blog_screen/widgets/future_builder_image.dart';
 import 'package:blog/view_model/get_requests_vm.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // ignore: must_be_immutable
 class CardWidget extends StatefulWidget {
   String title, subtitle, category;
   int index;
-  CardWidget(this.title, this.subtitle, this.category, this.index);
+  var text;
+  CardWidget(this.category, this.index);
   @override
   _CardWidgetState createState() => _CardWidgetState();
 }
@@ -23,7 +24,7 @@ class _CardWidgetState extends State<CardWidget> {
         onTap: () {
           Navigator.of(context).push(
             createRouteToDown(
-              BlogPost(),
+              BlogPost(widget.text, widget.index),
             ),
           );
         },
@@ -34,23 +35,7 @@ class _CardWidgetState extends State<CardWidget> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 buildFutureImage(widget.index),
-                Padding(
-                  padding:
-                      const EdgeInsets.only(left: 5.0, top: 15.0, bottom: 8.0),
-                  child: Text(
-                    widget.title,
-                    style: cardTitleStyle,
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 5.0),
-                  child: Text(
-                    widget.subtitle,
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                    style: cardSubTitleStyle,
-                  ),
-                )
+                futureBuilderTitle(),
               ],
             ),
           ),
@@ -59,21 +44,46 @@ class _CardWidgetState extends State<CardWidget> {
     );
   }
 
-  FutureBuilder buildFutureImage(index) {
+  FutureBuilder futureBuilderTitle() {
     return FutureBuilder<dynamic>(
-      future: GetRequestsViewModel().getDataImagesViewModel(index),
+      future: GetRequestsViewModel().getDataParagraphsViewModel(),
       builder: (BuildContext context, var snapshot) {
         if (snapshot.hasData) {
-          print(snapshot.data["download_url"]);
-          return Container(
-            width: ScreenUtil().screenWidth,
-            height: ScreenUtil().setHeight(158),
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                  fit: BoxFit.cover,
-                  image: NetworkImage(snapshot.data["download_url"])),
-              borderRadius: BorderRadius.all(Radius.circular(12.0)),
-            ),
+          widget.text = snapshot.data;
+          var pom = snapshot.data[0].split(" ");
+          widget.title = pom[0] +
+              " " +
+              " " +
+              pom[1] +
+              " " +
+              " " +
+              pom[2] +
+              " " +
+              " " +
+              pom[3];
+          widget.subtitle = snapshot.data[0].substring(0, 120);
+
+          return Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding:
+                    const EdgeInsets.only(left: 5.0, top: 15.0, bottom: 8.0),
+                child: Text(
+                  widget.title,
+                  style: cardTitleStyle,
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 5.0),
+                child: Text(
+                  widget.subtitle,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                  style: cardSubTitleStyle,
+                ),
+              )
+            ],
           );
         }
         return Center(child: CircularProgressIndicator());

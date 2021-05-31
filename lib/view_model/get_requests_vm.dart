@@ -5,7 +5,7 @@ class GetRequestsViewModel {
     return GetRequestsService().getDataImages(index);
   }
 
-  dynamic getDataParagraphsViewModel(index) async {
+  dynamic getDataParagraphsViewModel() async {
     return GetRequestsService().getDataParagraphs();
   }
 }
