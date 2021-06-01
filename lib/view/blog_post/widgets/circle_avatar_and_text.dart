@@ -3,6 +3,7 @@ import 'package:blog/view_model/get_requests_vm.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+// ignore: must_be_immutable
 class CircleAvatarAndText extends StatelessWidget {
   var index;
   CircleAvatarAndText(this.index);
@@ -39,13 +40,11 @@ class CircleAvatarAndText extends StatelessWidget {
                         style: avatarByWho,
                       );
                     }
-                    return Center(child: CircularProgressIndicator());
+                    return Container();
+
+                    //return Center(child: CircularProgressIndicator());
                   },
                 ),
-                // Text(
-                //   "By $author",
-                //   style: avatarByWho,
-                // ),
                 Row(
                   children: [
                     Text(

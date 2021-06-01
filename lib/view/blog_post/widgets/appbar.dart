@@ -52,23 +52,10 @@ Widget appBarCustom2(index) {
                 right: 0,
                 bottom: 0,
               );
-
-              // Padding(
-              //   padding: const EdgeInsets.only(bottom: 30.0, right: 20),
-              //   child: Container(
-              //     width: ScreenUtil().screenWidth,
-              //     height: ScreenUtil().setHeight(211),
-              //     decoration: BoxDecoration(
-              //       image: DecorationImage(
-              //         fit: BoxFit.cover,
-              //         image: NetworkImage(snapshot.data["download_url"]),
-              //       ),
-              //       borderRadius: BorderRadius.all(Radius.circular(16.0)),
-              //     ),
-              //   ),
-              // );
             }
-            return Center(child: CircularProgressIndicator());
+            return Container();
+
+            //return Center(child: CircularProgressIndicator());
           },
         ),
         Positioned(

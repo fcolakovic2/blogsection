@@ -28,7 +28,9 @@ class RoundedCornerImage extends StatelessWidget {
             ),
           );
         }
-        return Center(child: CircularProgressIndicator());
+        return Container();
+
+        //return Center(child: CircularProgressIndicator());
       },
     );
   }

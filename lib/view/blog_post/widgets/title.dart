@@ -1,6 +1,7 @@
 import 'package:blog/utils/style/styles.dart';
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class Titlee extends StatelessWidget {
   var title;
   Titlee(this.title);

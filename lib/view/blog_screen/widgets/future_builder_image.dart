@@ -12,12 +12,14 @@ FutureBuilder buildFutureImage(index) {
           height: ScreenUtil().setHeight(158),
           decoration: BoxDecoration(
             image: DecorationImage(
-                fit: BoxFit.cover,
-                image: NetworkImage(snapshot.data["download_url"])),
+              fit: BoxFit.cover,
+              image: NetworkImage(snapshot.data["download_url"]),
+            ),
             borderRadius: BorderRadius.all(Radius.circular(12.0)),
           ),
         );
       }
+      return Container();
       return Center(child: CircularProgressIndicator());
     },
   );

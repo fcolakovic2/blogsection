@@ -1,6 +1,7 @@
 import 'package:blog/utils/style/styles.dart';
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class SubTitle extends StatelessWidget {
   var subtitle;
   SubTitle(this.subtitle);

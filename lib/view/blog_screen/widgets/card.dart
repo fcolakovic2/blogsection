@@ -87,7 +87,8 @@ class _CardWidgetState extends State<CardWidget> {
             ],
           );
         }
-        return Center(child: CircularProgressIndicator());
+        return Container();
+        // return Center(child: CircularProgressIndicator());
       },
     );
   }

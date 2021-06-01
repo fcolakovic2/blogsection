@@ -8,6 +8,7 @@ import 'package:blog/view/blog_post/widgets/subtitle.dart';
 import 'package:blog/view/blog_post/widgets/title.dart';
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class BlogPostLayout extends StatefulWidget {
   var text, index, category;
   BlogPostLayout(this.text, this.index, this.category);
