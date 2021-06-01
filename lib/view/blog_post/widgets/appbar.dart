@@ -1,7 +1,7 @@
+import 'package:blog/utils/dummy_data/dummy_data.dart';
 import 'package:blog/view/blog_post/widgets/icon_back.dart';
 import 'package:blog/view/blog_post/widgets/icon_heart.dart';
 import 'package:blog/view/blog_post/widgets/icon_share.dart';
-import 'package:blog/view_model/get_requests_vm.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -38,25 +38,15 @@ Widget appBarCustom2(index) {
     expandedHeight: ScreenUtil().setHeight(353),
     flexibleSpace: Stack(
       children: [
-        FutureBuilder<dynamic>(
-          future: GetRequestsViewModel().getDataImagesViewModel(index),
-          builder: (BuildContext context, var snapshot) {
-            if (snapshot.hasData) {
-              return Positioned(
-                child: Image(
-                  fit: BoxFit.cover,
-                  image: NetworkImage(snapshot.data["download_url"]),
-                ),
-                top: 0,
-                left: 0,
-                right: 0,
-                bottom: 0,
-              );
-            }
-            return Container();
-
-            //return Center(child: CircularProgressIndicator());
-          },
+        Positioned(
+          child: Image(
+            fit: BoxFit.cover,
+            image: NetworkImage(lista[index]),
+          ),
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
         ),
         Positioned(
           child: Container(

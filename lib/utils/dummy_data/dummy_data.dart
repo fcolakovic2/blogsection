@@ -7,7 +7,7 @@ var pom = 0;
 var isLoading = true, isInit = false;
 
 List<String> lista = [];
-List<String> listaText = [];
+List<dynamic> listaText = [];
 List<String> listaTitle = [];
 List<String> listaSubtitle = [];
 

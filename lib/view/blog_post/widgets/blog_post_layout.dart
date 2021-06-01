@@ -1,3 +1,4 @@
+import 'package:blog/utils/dummy_data/dummy_data.dart';
 import 'package:blog/view/blog_post/widgets/scrollable.dart';
 import 'package:blog/utils/style/styles.dart';
 import 'package:blog/view/blog_post/widgets/category.dart';
@@ -24,13 +25,13 @@ class _BlogPostLayoutState extends State<BlogPostLayout> {
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
         Category(widget.category),
-        Titlee(widget.text[0].substring(0, 60)),
-        SubTitle(widget.text[0].substring(0, 40)),
+        Titlee(listaTitle[widget.index]),
+        SubTitle(listaSubtitle[widget.index]),
         CircleAvatarAndText(widget.index),
         Padding(
           padding: const EdgeInsets.only(bottom: 30.0, right: 20),
           child: Text(
-            widget.text[0],
+            listaText[0],
             style: avatarByWho,
           ),
         ),
@@ -38,14 +39,14 @@ class _BlogPostLayoutState extends State<BlogPostLayout> {
         Padding(
           padding: const EdgeInsets.only(bottom: 45.0, right: 20),
           child: Text(
-            widget.text[1],
+            listaText[1],
             style: avatarByWho,
           ),
         ),
         Padding(
           padding: const EdgeInsets.only(bottom: 30.0, right: 20),
           child: Text(
-            widget.text[2],
+            listaText[2],
             style: avatarByWho,
           ),
         ),
@@ -53,7 +54,7 @@ class _BlogPostLayoutState extends State<BlogPostLayout> {
         Padding(
           padding: const EdgeInsets.only(bottom: 32.0, right: 20),
           child: Text(
-            widget.text[3],
+            listaText[3],
             style: avatarByWho,
           ),
         ),

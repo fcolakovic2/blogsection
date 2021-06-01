@@ -3,7 +3,6 @@ import 'package:blog/utils/shared/animations.dart';
 import 'package:blog/utils/style/styles.dart';
 import 'package:blog/view/blog_post/pages/blog_post.dart';
 import 'package:blog/view_model/get_requests_vm.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -56,14 +55,14 @@ class _CardWidgetState extends State<CardWidget> {
                       padding: const EdgeInsets.only(
                           left: 5.0, top: 15.0, bottom: 8.0),
                       child: Text(
-                        listaTitle[widget.index],
+                        "${listaTitle[widget.index][0].toUpperCase()}${listaTitle[widget.index].substring(1)}",
                         style: cardTitleStyle,
                       ),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(left: 5.0),
                       child: Text(
-                        listaSubtitle[widget.index],
+                        "${listaSubtitle[widget.index][0].toUpperCase()}${listaSubtitle[widget.index].substring(1)}",
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                         style: cardSubTitleStyle,

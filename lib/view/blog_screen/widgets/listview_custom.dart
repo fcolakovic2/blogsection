@@ -1,9 +1,8 @@
 import 'package:blog/utils/dummy_data/dummy_data.dart';
 import 'package:blog/view/blog_screen/widgets/skeleton_custom.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:skeleton_loader/skeleton_loader.dart';
 
+// ignore: must_be_immutable
 class ListViewCustom extends StatefulWidget {
   var cardsList, category, imagee;
   ListViewCustom(this.cardsList, this.imagee, [this.category]);

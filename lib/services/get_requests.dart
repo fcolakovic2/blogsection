@@ -25,7 +25,8 @@ class GetRequestsService extends GetRequestsInterface {
         "https://baconipsum.com/api/?type=all-meat&paras=4&start-with-lorem=0";
     var req = await http.get(Uri.parse(myUrl));
     infos = json.decode(req.body);
-    listaText.add(infos);
+    // print(infos);
+    listaText.add(infos[0]);
     return infos;
   }
 

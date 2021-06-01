@@ -11,7 +11,7 @@ class SubTitle extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(bottom: 30, right: 20),
       child: Text(
-        subtitle,
+        "${subtitle[0].toUpperCase()}${subtitle.substring(1)}",
         style: blogPostSub,
       ),
     );

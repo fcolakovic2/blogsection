@@ -10,7 +10,7 @@ class Titlee extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(bottom: 20.0, right: 20),
       child: Text(
-        title,
+        "${title[0].toUpperCase()}${title.substring(1)}",
         style: appBarText,
       ),
     );
