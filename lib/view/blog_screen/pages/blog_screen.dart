@@ -13,14 +13,34 @@ class BlogScreen extends StatefulWidget {
 
 class _BlogScreenState extends State<BlogScreen> {
   dynamic imagee;
-
+  dynamic titleSubtitle;
   @override
   void initState() {
     super.initState();
+
     Random random = new Random();
 
     imagee = GetRequestsViewModel().getDataImagesViewModel(random.nextInt(10));
+    for (var i = 0; i < cardsList.length; i++)
+      titleSubtitle =
+          GetRequestsViewModel().getDataTitleSubtitleViewModel().then((result) {
+        if (i == cardsList.length - 1) {
+          Future.delayed(Duration(seconds: 2), () {
+            setState(() {
+              isLoading = false;
+            });
+          });
+        }
+      });
   }
+
+  // Future _simulateLoad() async {
+  // Future.delayed(Duration(seconds: 2), () {
+  //   setState(() {
+  //     isLoading = false;
+  //   });
+  // });
+  // }
 
   @override
   Widget build(BuildContext context) {

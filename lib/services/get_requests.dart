@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:math';
 import 'package:blog/interface/get_requests_interface.dart';
 import 'package:blog/utils/dummy_data/dummy_data.dart';
 import 'package:blog/utils/shared/strings.dart';
@@ -24,6 +25,21 @@ class GetRequestsService extends GetRequestsInterface {
         "https://baconipsum.com/api/?type=all-meat&paras=4&start-with-lorem=0";
     var req = await http.get(Uri.parse(myUrl));
     infos = json.decode(req.body);
+    listaText.add(infos);
+    return infos;
+  }
+
+  @override
+  dynamic getDataTitleSubtitle() async {
+    var infos;
+    Random rand = new Random();
+    int pom = rand.nextInt(10);
+    if (pom == 0) pom = 1;
+    String myUrl = "https://jsonplaceholder.typicode.com/posts/$pom";
+    var req = await http.get(Uri.parse(myUrl));
+    infos = json.decode(req.body);
+    listaTitle.add(infos["title"]);
+    listaSubtitle.add(infos["body"]);
     return infos;
   }
 }

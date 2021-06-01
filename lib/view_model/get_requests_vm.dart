@@ -8,4 +8,8 @@ class GetRequestsViewModel {
   dynamic getDataParagraphsViewModel() async {
     return GetRequestsService().getDataParagraphs();
   }
+
+  dynamic getDataTitleSubtitleViewModel() async {
+    return GetRequestsService().getDataTitleSubtitle();
+  }
 }

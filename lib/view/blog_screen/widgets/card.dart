@@ -21,7 +21,6 @@ class CardWidget extends StatefulWidget {
 class _CardWidgetState extends State<CardWidget> {
   @override
   Widget build(BuildContext context) {
-    print("ss");
     return Padding(
       padding: const EdgeInsets.only(left: 0.0, right: 0.0, bottom: 25),
       child: GestureDetector(
@@ -50,7 +49,28 @@ class _CardWidgetState extends State<CardWidget> {
                     borderRadius: BorderRadius.all(Radius.circular(12.0)),
                   ),
                 ),
-                futureBuilderTitle(),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(
+                          left: 5.0, top: 15.0, bottom: 8.0),
+                      child: Text(
+                        listaTitle[widget.index],
+                        style: cardTitleStyle,
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 5.0),
+                      child: Text(
+                        listaSubtitle[widget.index],
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                        style: cardSubTitleStyle,
+                      ),
+                    )
+                  ],
+                ),
               ],
             ),
           ),

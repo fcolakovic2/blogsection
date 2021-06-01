@@ -12,29 +12,15 @@ class ListViewCustom extends StatefulWidget {
 }
 
 class _ListViewCustomState extends State<ListViewCustom> {
-  var _isLoading = true, _isInit = false;
-
   @override
   void initState() {
     super.initState();
-    if (!_isInit) {
-      _simulateLoad();
-    }
-    _isInit = true;
-  }
-
-  Future _simulateLoad() async {
-    Future.delayed(Duration(seconds: 2), () {
-      setState(() {
-        _isLoading = false;
-      });
-    });
   }
 
   @override
   Widget build(BuildContext context) {
     var pom = 0;
-    if (!_isLoading) {
+    if (!isLoading) {
       return NotificationListener<OverscrollIndicatorNotification>(
         // ignore: missing_return
         onNotification: (overscroll) {

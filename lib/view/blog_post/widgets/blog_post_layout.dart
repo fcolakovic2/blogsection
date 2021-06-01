@@ -19,7 +19,6 @@ class BlogPostLayout extends StatefulWidget {
 class _BlogPostLayoutState extends State<BlogPostLayout> {
   @override
   Widget build(BuildContext context) {
-    print(widget.index);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.spaceAround,

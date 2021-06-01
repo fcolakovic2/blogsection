@@ -3,7 +3,13 @@ import 'package:blog/view/blog_screen/widgets/listview_custom.dart';
 import 'package:flutter/material.dart';
 
 var pom = 0;
+
+var isLoading = true, isInit = false;
+
 List<String> lista = [];
+List<String> listaText = [];
+List<String> listaTitle = [];
+List<String> listaSubtitle = [];
 
 List<String> tabList = ["ALL POSTS", "EXPERIENCES", "RECIPES", "NEWS"];
 List<CardWidget> cardsList = [

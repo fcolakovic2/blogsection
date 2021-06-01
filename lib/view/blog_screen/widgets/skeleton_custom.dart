@@ -32,7 +32,7 @@ class SkeletonCustom extends StatelessWidget {
                       height: ScreenUtil().setHeight(158),
                       width: double.infinity,
                     ),
-                    SizedBox(height: 10),
+                    SizedBox(height: 15),
                     Padding(
                       padding: const EdgeInsets.only(left: 5.0),
                       child: Container(
