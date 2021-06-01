@@ -1,8 +1,9 @@
+import 'package:blog/utils/dummy_data/dummy_data.dart';
 import 'package:blog/utils/shared/animations.dart';
-import 'package:blog/utils/shared/strings.dart';
 import 'package:blog/utils/style/styles.dart';
 import 'package:blog/view/blog_post/pages/blog_post.dart';
 import 'package:blog/view_model/get_requests_vm.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -20,6 +21,7 @@ class CardWidget extends StatefulWidget {
 class _CardWidgetState extends State<CardWidget> {
   @override
   Widget build(BuildContext context) {
+    print("ss");
     return Padding(
       padding: const EdgeInsets.only(left: 0.0, right: 0.0, bottom: 25),
       child: GestureDetector(
@@ -40,9 +42,10 @@ class _CardWidgetState extends State<CardWidget> {
                   width: ScreenUtil().screenWidth,
                   height: ScreenUtil().setHeight(158),
                   decoration: BoxDecoration(
+                    color: Colors.grey[300],
                     image: DecorationImage(
                       fit: BoxFit.cover,
-                      image: NetworkImage(lista[2]),
+                      image: NetworkImage(lista[widget.index]),
                     ),
                     borderRadius: BorderRadius.all(Radius.circular(12.0)),
                   ),

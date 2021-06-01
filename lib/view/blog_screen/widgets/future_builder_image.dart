@@ -16,6 +16,12 @@ FutureBuilder buildFutureImage(img) {
             ),
             borderRadius: BorderRadius.all(Radius.circular(12.0)),
           ),
+          // child: CachedNetworkImage(
+          //   imageUrl: snapshot.data["download_url"],
+          //   placeholder: (context, url) =>
+          //       Center(child: CircularProgressIndicator()),
+          //   errorWidget: (context, url, error) => Icon(Icons.error),
+          // ),
         );
       }
       return Container(

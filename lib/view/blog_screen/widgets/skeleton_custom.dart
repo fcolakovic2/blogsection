@@ -20,7 +20,7 @@ class SkeletonCustom extends StatelessWidget {
             3,
             (counter) {
               return Padding(
-                padding: const EdgeInsets.only(top: 40.0, bottom: 40.0),
+                padding: const EdgeInsets.only(top: 40.0, bottom: 0.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
@@ -33,22 +33,31 @@ class SkeletonCustom extends StatelessWidget {
                       width: double.infinity,
                     ),
                     SizedBox(height: 10),
-                    Container(
-                      width: ScreenUtil().screenWidth / 2,
-                      height: 12,
-                      color: Colors.white,
+                    Padding(
+                      padding: const EdgeInsets.only(left: 5.0),
+                      child: Container(
+                        width: ScreenUtil().screenWidth / 2,
+                        height: 12,
+                        color: Colors.white,
+                      ),
                     ),
                     SizedBox(height: 10),
-                    Container(
-                      width: double.infinity,
-                      height: 10,
-                      color: Colors.white,
+                    Padding(
+                      padding: const EdgeInsets.only(left: 5.0),
+                      child: Container(
+                        width: double.infinity,
+                        height: 10,
+                        color: Colors.white,
+                      ),
                     ),
                     SizedBox(height: 10),
-                    Container(
-                      width: double.infinity,
-                      height: 10,
-                      color: Colors.white,
+                    Padding(
+                      padding: const EdgeInsets.only(left: 5.0),
+                      child: Container(
+                        width: double.infinity,
+                        height: 10,
+                        color: Colors.white,
+                      ),
                     ),
                   ],
                 ),
