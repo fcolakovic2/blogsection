@@ -3,6 +3,7 @@ import 'package:blog/utils/style/styles.dart';
 import 'package:blog/view/blog_post/pages/blog_post.dart';
 import 'package:blog/view/blog_screen/widgets/future_builder_image.dart';
 import 'package:blog/view_model/get_requests_vm.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
@@ -23,7 +24,7 @@ class _CardWidgetState extends State<CardWidget> {
       child: GestureDetector(
         onTap: () {
           Navigator.of(context).push(
-            createRouteToDown(
+            createRouteToLeft(
               BlogPost(widget.text, widget.index, widget.category),
             ),
           );
