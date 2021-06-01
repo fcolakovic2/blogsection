@@ -6,16 +6,18 @@ var pom = 0;
 
 List<String> tabList = ["ALL POSTS", "EXPERIENCES", "RECIPES", "NEWS"];
 List<CardWidget> cardsList = [
-  CardWidget("EXPERIENCES", 1),
-  CardWidget("RECIPES", 2),
-  CardWidget("NEWS", 3),
-  CardWidget("EXPERIENCES", 4),
-  CardWidget("NEWS", 5),
+  CardWidget("EXPERIENCES", 0),
+  CardWidget("RECIPES", 1),
+  CardWidget("NEWS", 2),
+  CardWidget("EXPERIENCES", 3),
+  CardWidget("NEWS", 4),
 ];
 
-List<Widget> widgetsList = [
-  listViewCustom(cardsList),
-  listViewCustom(cardsList, "EXPERIENCES"),
-  listViewCustom(cardsList, "RECIPES"),
-  listViewCustom(cardsList, "NEWS"),
-];
+List<Widget> widgetsList([images]) {
+  return [
+    ListViewCustom(cardsList, images),
+    ListViewCustom(cardsList, images, "EXPERIENCES"),
+    ListViewCustom(cardsList, images, "RECIPES"),
+    ListViewCustom(cardsList, images, "NEWS"),
+  ];
+}

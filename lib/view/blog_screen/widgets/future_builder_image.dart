@@ -1,10 +1,9 @@
-import 'package:blog/view_model/get_requests_vm.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-FutureBuilder buildFutureImage(index) {
+FutureBuilder buildFutureImage(img) {
   return FutureBuilder<dynamic>(
-    future: GetRequestsViewModel().getDataImagesViewModel(index),
+    future: img,
     builder: (BuildContext context, var snapshot) {
       if (snapshot.hasData) {
         return Container(
@@ -19,7 +18,11 @@ FutureBuilder buildFutureImage(index) {
           ),
         );
       }
-      return Container();
+      return Container(
+        width: ScreenUtil().screenWidth,
+        height: ScreenUtil().setHeight(158),
+        color: Colors.grey[300],
+      );
       return Center(child: CircularProgressIndicator());
     },
   );

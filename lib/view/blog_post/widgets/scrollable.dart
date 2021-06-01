@@ -38,8 +38,9 @@ class _RelatedPostsState extends State<RelatedPosts> {
                   return Padding(
                     padding: const EdgeInsets.only(right: 0.0),
                     child: Container(
-                        width: ScreenUtil().setWidth(300),
-                        child: cardsList[index]),
+                      width: ScreenUtil().setWidth(300),
+                      child: cardsList[index],
+                    ),
                   );
                 },
               ),

@@ -1,10 +1,11 @@
 import 'package:blog/utils/shared/animations.dart';
+import 'package:blog/utils/shared/strings.dart';
 import 'package:blog/utils/style/styles.dart';
 import 'package:blog/view/blog_post/pages/blog_post.dart';
-import 'package:blog/view/blog_screen/widgets/future_builder_image.dart';
 import 'package:blog/view_model/get_requests_vm.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // ignore: must_be_immutable
 class CardWidget extends StatefulWidget {
@@ -35,7 +36,17 @@ class _CardWidgetState extends State<CardWidget> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                buildFutureImage(widget.index),
+                Container(
+                  width: ScreenUtil().screenWidth,
+                  height: ScreenUtil().setHeight(158),
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      fit: BoxFit.cover,
+                      image: NetworkImage(lista[2]),
+                    ),
+                    borderRadius: BorderRadius.all(Radius.circular(12.0)),
+                  ),
+                ),
                 futureBuilderTitle(),
               ],
             ),

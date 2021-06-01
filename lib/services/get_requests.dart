@@ -1,5 +1,7 @@
 import 'dart:convert';
 import 'package:blog/interface/get_requests_interface.dart';
+import 'package:blog/utils/dummy_data/dummy_data.dart';
+import 'package:blog/utils/shared/strings.dart';
 import 'package:http/http.dart' as http;
 
 class GetRequestsService extends GetRequestsInterface {
@@ -9,6 +11,9 @@ class GetRequestsService extends GetRequestsInterface {
     String myUrl = "https://picsum.photos/v2/list";
     var req = await http.get(Uri.parse(myUrl));
     infos = json.decode(req.body);
+    for (var i = 0; i < cardsList.length; i++)
+      lista.add(await infos[i]["download_url"]);
+    nekiStr = await infos[index]["download_url"];
     return infos[index];
   }
 
