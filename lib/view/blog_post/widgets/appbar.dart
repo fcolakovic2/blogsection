@@ -7,6 +7,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 Widget appBarCustom2(index) {
   return SliverAppBar(
+    brightness: Brightness.dark, //or Brightness.dark
+
     title: Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [

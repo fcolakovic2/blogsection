@@ -17,6 +17,7 @@ void main() {
   );
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   setSystemUIOverlayStyle();
+  // SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.bottom]);
 }
 
 class MyApp extends StatelessWidget {

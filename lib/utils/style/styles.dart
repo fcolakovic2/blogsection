@@ -63,7 +63,7 @@ BoxDecoration appBarBorder() {
 void setSystemUIOverlayStyle() {
   return SystemChrome.setSystemUIOverlayStyle(
     SystemUiOverlayStyle.dark.copyWith(
-      statusBarColor: Colors.transparent,
+      statusBarColor: Color.fromRGBO(0, 0, 0, 0.1),
       statusBarIconBrightness: Brightness.light,
       statusBarBrightness: Brightness.light,
     ), /* set Status bar icon color in iOS. */
