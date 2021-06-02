@@ -10,6 +10,7 @@ List<String> lista = [];
 List<dynamic> listaText = [];
 List<String> listaTitle = [];
 List<String> listaSubtitle = [];
+String date = "";
 
 List<String> tabList = ["ALL POSTS", "EXPERIENCES", "RECIPES", "NEWS"];
 List<CardWidget> cardsList = [

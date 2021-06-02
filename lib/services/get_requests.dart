@@ -4,6 +4,7 @@ import 'package:blog/interface/get_requests_interface.dart';
 import 'package:blog/utils/dummy_data/dummy_data.dart';
 import 'package:blog/utils/shared/strings.dart';
 import 'package:http/http.dart' as http;
+import 'package:intl/intl.dart';
 
 class GetRequestsService extends GetRequestsInterface {
   @override
@@ -42,5 +43,17 @@ class GetRequestsService extends GetRequestsInterface {
     listaTitle.add(infos["title"]);
     listaSubtitle.add(infos["body"]);
     return infos;
+  }
+
+  @override
+  dynamic getDataDate() async {
+    var infos;
+    String myUrl = "https://swapi.dev/api/people/1/";
+    var req = await http.get(Uri.parse(myUrl));
+    infos = json.decode(req.body);
+    DateFormat dateFormat = DateFormat("MMM dd");
+    DateTime dateTime = DateTime.parse(infos["created"]);
+    date = dateFormat.format(dateTime);
+    return date;
   }
 }

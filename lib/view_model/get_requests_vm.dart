@@ -12,4 +12,8 @@ class GetRequestsViewModel {
   dynamic getDataTitleSubtitleViewModel() async {
     return GetRequestsService().getDataTitleSubtitle();
   }
+
+  dynamic getDatatDateViewModel() async {
+    return GetRequestsService().getDataDate();
+  }
 }

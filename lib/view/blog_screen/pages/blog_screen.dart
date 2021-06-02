@@ -15,6 +15,7 @@ class _BlogScreenState extends State<BlogScreen> {
   dynamic imagee;
   dynamic titleSubtitle;
   dynamic paragraphs;
+  dynamic dates;
 
   @override
   void initState() {
@@ -35,10 +36,8 @@ class _BlogScreenState extends State<BlogScreen> {
         }
       });
 
-      paragraphs =
-          GetRequestsViewModel().getDataParagraphsViewModel().then((result) {
-        // print(result);
-      });
+      paragraphs = GetRequestsViewModel().getDataParagraphsViewModel();
+      dates = GetRequestsViewModel().getDatatDateViewModel();
     }
   }
 

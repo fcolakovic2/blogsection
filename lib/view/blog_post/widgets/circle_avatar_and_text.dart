@@ -1,7 +1,9 @@
 import 'package:blog/utils/style/styles.dart';
 import 'package:blog/view_model/get_requests_vm.dart';
+import 'package:blog/utils/dummy_data/dummy_data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 // ignore: must_be_immutable
 class CircleAvatarAndText extends StatelessWidget {
@@ -48,15 +50,15 @@ class CircleAvatarAndText extends StatelessWidget {
                 Row(
                   children: [
                     Text(
-                      "Apr 29 ",
+                      "$date ",
                       style: avatarSecondLine,
                     ),
-                    Text(
-                      ". ",
-                      style: avatarSecondLine,
+                    SvgPicture.asset(
+                      "assets/images/dot.svg",
+                      color: Color(0xff373737),
                     ),
                     Text(
-                      "3 min read",
+                      " 3 min read",
                       style: avatarSecondLine,
                     ),
                   ],
