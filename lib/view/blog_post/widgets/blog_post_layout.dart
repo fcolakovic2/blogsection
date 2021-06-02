@@ -20,47 +20,49 @@ class BlogPostLayout extends StatefulWidget {
 class _BlogPostLayoutState extends State<BlogPostLayout> {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: [
-        Category(widget.category),
-        Titlee(listaTitle[widget.index]),
-        SubTitle(listaSubtitle[widget.index]),
-        CircleAvatarAndText(widget.index),
-        Padding(
-          padding: const EdgeInsets.only(bottom: 30.0, right: 20),
-          child: Text(
-            listaText[0],
-            style: avatarByWho,
+    return Container(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          Category(widget.category),
+          Titlee(listaTitle[widget.index]),
+          SubTitle(listaSubtitle[widget.index]),
+          CircleAvatarAndText(widget.index),
+          Padding(
+            padding: const EdgeInsets.only(bottom: 30.0, right: 20),
+            child: Text(
+              listaText[0],
+              style: avatarByWho,
+            ),
           ),
-        ),
-        RoundedCornerImage(widget.index + 2),
-        Padding(
-          padding: const EdgeInsets.only(bottom: 45.0, right: 20),
-          child: Text(
-            listaText[1],
-            style: avatarByWho,
+          RoundedCornerImage(widget.index + 2),
+          Padding(
+            padding: const EdgeInsets.only(bottom: 45.0, right: 20),
+            child: Text(
+              listaText[1],
+              style: avatarByWho,
+            ),
           ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(bottom: 30.0, right: 20),
-          child: Text(
-            listaText[2],
-            style: avatarByWho,
+          Padding(
+            padding: const EdgeInsets.only(bottom: 30.0, right: 20),
+            child: Text(
+              listaText[2],
+              style: avatarByWho,
+            ),
           ),
-        ),
-        RoundedCornerImage(widget.index),
-        Padding(
-          padding: const EdgeInsets.only(bottom: 32.0, right: 20),
-          child: Text(
-            listaText[3],
-            style: avatarByWho,
+          RoundedCornerImage(widget.index),
+          Padding(
+            padding: const EdgeInsets.only(bottom: 32.0, right: 20),
+            child: Text(
+              listaText[3],
+              style: avatarByWho,
+            ),
           ),
-        ),
-        SocialIcons(),
-        RelatedPosts(),
-      ],
+          SocialIcons(),
+          RelatedPosts(),
+        ],
+      ),
     );
   }
 }
