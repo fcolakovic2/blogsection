@@ -19,15 +19,14 @@ DefaultTabController defaultTabBarCustom(tabList, widgetsList, appBar,
 
 // ignore: must_be_immutable
 class TabBarSlider extends StatefulWidget {
-  var list, widgetsList, widgetsBefore;
-  TabBarSlider(this.list, this.widgetsList, [this.widgetsBefore]);
+  var list, widgetsList, widgetsBefore, imagee;
+  TabBarSlider(this.list, this.widgetsList, this.imagee, [this.widgetsBefore]);
   @override
   _TabBarSliderState createState() => _TabBarSliderState();
 }
 
 class _TabBarSliderState extends State<TabBarSlider>
     with TickerProviderStateMixin {
-  var _scrollController = ScrollController();
   TabController _tabController;
 
   @override
@@ -49,7 +48,6 @@ class _TabBarSliderState extends State<TabBarSlider>
               ? NeverScrollableScrollPhysics()
               : AlwaysScrollableScrollPhysics(),
           shrinkWrap: true,
-          controller: _scrollController,
           children: [
             Container(
               child: widget.widgetsBefore,
@@ -64,10 +62,10 @@ class _TabBarSliderState extends State<TabBarSlider>
                 controller: _tabController,
                 physics: BouncingScrollPhysics(),
                 children: List<Widget>.generate(
-                  widgetsList.length,
+                  4,
                   (counter) => Padding(
                     padding: const EdgeInsets.only(left: 20.0, right: 20.0),
-                    child: widgetsList[counter],
+                    child: widgetsList(widget.imagee)[counter],
                   ),
                 ),
               ),

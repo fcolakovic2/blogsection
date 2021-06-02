@@ -1,6 +1,7 @@
 import 'package:blog/view/blog_post/widgets/sliver_section.dart';
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class BlogPost extends StatefulWidget {
   var text, index, category;
   BlogPost(this.text, this.index, this.category);

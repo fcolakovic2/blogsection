@@ -1,3 +1,4 @@
+import 'package:blog/view/blog_post/widgets/container_social_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -14,69 +15,39 @@ class SocialIcons extends StatelessWidget {
       child: Row(
         children: [
           Padding(
-            padding: const EdgeInsets.only(right: 20.0),
+            padding: const EdgeInsets.only(right: 12.0),
+            child: ContainerForIcon("facebook.svg"),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(right: 12.0),
             child: Container(
-              width: ScreenUtil().setWidth(22),
-              height: ScreenUtil().setHeight(22),
-              child: SvgPicture.asset(
-                "assets/images/facebook.svg",
-                color: Color(0xff373737),
-              ),
+              child: ContainerForIcon("google.svg"),
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(right: 20.0),
+            padding: const EdgeInsets.only(right: 12.0),
             child: Container(
-              width: ScreenUtil().setWidth(22),
-              height: ScreenUtil().setHeight(22),
-              child: SvgPicture.asset(
-                "assets/images/google.svg",
-                color: Color(0xff373737),
-              ),
+              child: ContainerForIcon("twitter.svg"),
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(right: 20.0),
+            padding: const EdgeInsets.only(right: 12.0),
             child: Container(
-              width: ScreenUtil().setWidth(22),
-              height: ScreenUtil().setHeight(22),
-              child: SvgPicture.asset(
-                "assets/images/twitter.svg",
-                color: Color(0xff373737),
-              ),
+              width: 20.sp,
+              height: 20.sp,
+              child: ContainerForIcon("linkedin.svg"),
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(right: 20.0),
+            padding: const EdgeInsets.only(right: 12.0),
             child: Container(
-              width: ScreenUtil().setWidth(22),
-              height: ScreenUtil().setHeight(22),
-              child: SvgPicture.asset(
-                "assets/images/linkedin.svg",
-                color: Color(0xff373737),
-              ),
+              child: ContainerForIcon("whatsapp.svg"),
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(right: 20.0),
+            padding: const EdgeInsets.only(right: 12.0),
             child: Container(
-              width: ScreenUtil().setWidth(22),
-              height: ScreenUtil().setHeight(22),
-              child: SvgPicture.asset(
-                "assets/images/whatsapp.svg",
-                color: Color(0xff373737),
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(right: 20.0),
-            child: Container(
-              width: ScreenUtil().setWidth(22),
-              height: ScreenUtil().setHeight(22),
-              child: SvgPicture.asset(
-                "assets/images/Ellipse 188.svg",
-                color: Color(0xff373737),
-              ),
+              child: ContainerForIcon("Ellipse 188.svg"),
             ),
           ),
         ],

@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
       designSize: Size(375, 812),
       builder: () => MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Flutter Demo',
+        title: 'Blog',
         theme: themeDataStyle(),
         builder: (context, widget) {
           return MediaQuery(

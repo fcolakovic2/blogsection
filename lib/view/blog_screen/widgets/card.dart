@@ -1,9 +1,11 @@
+import 'package:blog/utils/dummy_data/dummy_data.dart';
 import 'package:blog/utils/shared/animations.dart';
 import 'package:blog/utils/style/styles.dart';
 import 'package:blog/view/blog_post/pages/blog_post.dart';
-import 'package:blog/view/blog_screen/widgets/future_builder_image.dart';
 import 'package:blog/view_model/get_requests_vm.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // ignore: must_be_immutable
 class CardWidget extends StatefulWidget {
@@ -23,7 +25,7 @@ class _CardWidgetState extends State<CardWidget> {
       child: GestureDetector(
         onTap: () {
           Navigator.of(context).push(
-            createRouteToDown(
+            createRouteToLeft(
               BlogPost(widget.text, widget.index, widget.category),
             ),
           );
@@ -34,8 +36,40 @@ class _CardWidgetState extends State<CardWidget> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                buildFutureImage(widget.index),
-                futureBuilderTitle(),
+                Container(
+                  width: ScreenUtil().screenWidth,
+                  height: ScreenUtil().setHeight(158),
+                  decoration: BoxDecoration(
+                    color: Colors.grey[300],
+                    image: DecorationImage(
+                      fit: BoxFit.cover,
+                      image: NetworkImage(lista[widget.index]),
+                    ),
+                    borderRadius: BorderRadius.all(Radius.circular(12.0)),
+                  ),
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(
+                          left: 5.0, top: 15.0, bottom: 8.0),
+                      child: Text(
+                        "${listaTitle[widget.index][0].toUpperCase()}${listaTitle[widget.index].substring(1)}",
+                        style: cardTitleStyle,
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 5.0),
+                      child: Text(
+                        "${listaSubtitle[widget.index][0].toUpperCase()}${listaSubtitle[widget.index].substring(1)}",
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                        style: cardSubTitleStyle,
+                      ),
+                    )
+                  ],
+                ),
               ],
             ),
           ),
@@ -86,7 +120,8 @@ class _CardWidgetState extends State<CardWidget> {
             ],
           );
         }
-        return Center(child: CircularProgressIndicator());
+        return Container();
+        // return Center(child: CircularProgressIndicator());
       },
     );
   }
