@@ -36,7 +36,7 @@ class _BlogPostLayoutState extends State<BlogPostLayout> {
               style: avatarByWho,
             ),
           ),
-          RoundedCornerImage(widget.index + 2),
+          RoundedCornerImage(widget.index),
           Padding(
             padding: const EdgeInsets.only(bottom: 45.0, right: 20),
             child: Text(

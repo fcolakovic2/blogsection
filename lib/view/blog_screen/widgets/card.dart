@@ -22,7 +22,6 @@ class _CardWidgetState extends State<CardWidget> {
   @override
   Widget build(BuildContext context) {
     var controllers = context.watch<PageIndexProvider>();
-
     return Padding(
       padding: const EdgeInsets.only(left: 0.0, right: 0.0, bottom: 25),
       child: GestureDetector(

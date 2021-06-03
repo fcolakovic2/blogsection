@@ -10,7 +10,7 @@ class RelatedPosts extends StatefulWidget {
 
 class _RelatedPostsState extends State<RelatedPosts> {
   void initState() {
-    cardsList.shuffle();
+    cardsListToShuffle.shuffle();
     super.initState();
   }
 
@@ -33,13 +33,13 @@ class _RelatedPostsState extends State<RelatedPosts> {
               },
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
-                itemCount: cardsList.length,
+                itemCount: cardsListToShuffle.length,
                 itemBuilder: (BuildContext ctxt, int index) {
                   return Padding(
                     padding: const EdgeInsets.only(right: 0.0),
                     child: Container(
                       width: ScreenUtil().setWidth(300),
-                      child: cardsList[index],
+                      child: cardsListToShuffle[index],
                     ),
                   );
                 },

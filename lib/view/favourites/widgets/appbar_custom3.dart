@@ -1,5 +1,5 @@
 import 'package:blog/utils/style/styles.dart';
-import 'package:blog/view/blog_post/widgets/icon_back.dart';
+import 'package:blog/view/favourites/widgets/icon_back.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
