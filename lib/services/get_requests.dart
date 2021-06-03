@@ -2,21 +2,34 @@ import 'dart:convert';
 import 'dart:math';
 import 'package:blog/interface/get_requests_interface.dart';
 import 'package:blog/utils/dummy_data/dummy_data.dart';
-import 'package:blog/utils/shared/strings.dart';
 import 'package:http/http.dart' as http;
 import 'package:intl/intl.dart';
 
 class GetRequestsService extends GetRequestsInterface {
   @override
-  dynamic getDataImages(index) async {
+  dynamic getDataAuthor(index) async {
     var infos;
     String myUrl = "https://picsum.photos/v2/list";
     var req = await http.get(Uri.parse(myUrl));
     infos = json.decode(req.body);
     for (var i = 0; i < cardsList.length; i++)
-      lista.add(await infos[i]["download_url"]);
-    nekiStr = await infos[index]["download_url"];
+      listaAuth.add(await infos[i]["author"]);
+    print("ss");
     return infos[index];
+  }
+
+  @override
+  dynamic getDataImages(index) async {
+    var infos;
+    String myUrl = "https://www.breakingbadapi.com/api/characters/";
+    var req = await http.get(Uri.parse(myUrl));
+    infos = json.decode(req.body);
+    if (lista.length != cardsList.length) {
+      for (var i = 1; i <= cardsList.length; i++) {
+        lista.add(await infos[i]["img"]);
+      }
+    }
+    return infos[0]["img"];
   }
 
   @override
