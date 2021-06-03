@@ -29,7 +29,7 @@ List<CardWidget> cardsList = [
   CardWidget("NEWS", 4),
 ];
 
-List<CardWidget> cardsListToShuffle = cardsList;
+List<CardWidget> cardsListToShuffle = cardsList.map((v) => v).toList();
 
 List<Widget> widgetsList() {
   return [
