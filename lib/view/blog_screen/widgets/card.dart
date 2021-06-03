@@ -6,7 +6,6 @@ import 'package:blog/view/blog_post/pages/blog_post.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:provider/provider.dart';
 
 // ignore: must_be_immutable
 class CardWidget extends StatefulWidget {
@@ -21,12 +20,11 @@ class CardWidget extends StatefulWidget {
 class _CardWidgetState extends State<CardWidget> {
   @override
   Widget build(BuildContext context) {
-    var controllers = context.watch<PageIndexProvider>();
     return Padding(
       padding: const EdgeInsets.only(left: 0.0, right: 0.0, bottom: 25),
       child: GestureDetector(
         onTap: () {
-          controllers.changeUpdateStatus(true);
+          // controllers.changeUpdateStatus(true);
 
           Navigator.of(context).push(
             createRouteToLeft(
@@ -61,7 +59,7 @@ class _CardWidgetState extends State<CardWidget> {
                       child: Text(
                         "${listaTitle[widget.index][0].toUpperCase()}${listaTitle[widget.index].substring(1)}",
                         style: cardTitleStyle,
-                        maxLines: controllers.related == true ? 1 : 2,
+                        maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                       ),
                     ),
