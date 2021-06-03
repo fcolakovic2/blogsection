@@ -1,9 +1,18 @@
+import 'package:blog/providers/page_index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 
-class IconBack extends StatelessWidget {
+class IconBack extends StatefulWidget {
+  @override
+  _IconBackState createState() => _IconBackState();
+}
+
+class _IconBackState extends State<IconBack> {
   @override
   Widget build(BuildContext context) {
+    var controllers = context.watch<PageIndexProvider>();
+
     return Container(
       width: 39.sp,
       height: 39.sp,
@@ -17,6 +26,7 @@ class IconBack extends StatelessWidget {
           size: 18.sp,
         ),
         onPressed: () {
+          controllers.changeUpdateStatus(false);
           Navigator.pop(context);
         },
       ),

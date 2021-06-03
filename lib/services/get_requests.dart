@@ -32,12 +32,12 @@ class GetRequestsService extends GetRequestsInterface {
   }
 
   @override
-  dynamic getDataTitleSubtitle() async {
+  dynamic getDataTitleSubtitle(index) async {
     var infos;
     Random rand = new Random();
     int pom = rand.nextInt(10);
     if (pom == 0) pom = 1;
-    String myUrl = "https://jsonplaceholder.typicode.com/posts/$pom";
+    String myUrl = "https://jsonplaceholder.typicode.com/posts/${index + 1}";
     var req = await http.get(Uri.parse(myUrl));
     infos = json.decode(req.body);
     listaTitle.add(infos["title"]);

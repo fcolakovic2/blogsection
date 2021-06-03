@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'package:blog/utils/dummy_data/dummy_data.dart';
 import 'package:blog/view/blog_screen/widgets/appbar.dart';
 import 'package:blog/view/blog_screen/widgets/default_tabbar_custom.dart';
@@ -25,8 +24,9 @@ class _BlogScreenState extends State<BlogScreen> {
 
     imagee = GetRequestsViewModel().getDataImagesViewModel(random.nextInt(10));
     for (var i = 0; i < cardsList.length; i++) {
-      titleSubtitle =
-          GetRequestsViewModel().getDataTitleSubtitleViewModel().then((result) {
+      titleSubtitle = GetRequestsViewModel()
+          .getDataTitleSubtitleViewModel(i)
+          .then((result) {
         if (i == cardsList.length - 1) {
           Future.delayed(Duration(seconds: 2), () {
             setState(() {
