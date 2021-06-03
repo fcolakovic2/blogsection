@@ -21,6 +21,8 @@ List<CardWidget> cardsList = [
   CardWidget("NEWS", 4),
 ];
 
+List<CardWidget> cardsListToShuffle = cardsList;
+
 List<Widget> widgetsList([images]) {
   return [
     ListViewCustom(cardsList, images),

@@ -26,7 +26,6 @@ class _IconBackState extends State<IconBack> {
           size: 18.sp,
         ),
         onPressed: () {
-          controllers.changeUpdateStatus(false);
           Navigator.pop(context);
         },
       ),

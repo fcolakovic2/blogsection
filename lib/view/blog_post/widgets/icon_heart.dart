@@ -1,3 +1,5 @@
+import 'package:blog/utils/shared/animations.dart';
+import 'package:blog/view/favourites/pages/favourites_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -17,6 +19,11 @@ class IconHeart extends StatelessWidget {
           color: Color(0xff373737),
         ),
         onPressed: () {
+          Navigator.of(context).push(
+            createRouteToLeft(
+              FavouritesScreen(),
+            ),
+          );
           // Navigator.pop(context);
         },
       ),

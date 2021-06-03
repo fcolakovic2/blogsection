@@ -1,11 +1,12 @@
+import 'package:blog/providers/page_index.dart';
 import 'package:blog/utils/dummy_data/dummy_data.dart';
 import 'package:blog/utils/shared/animations.dart';
 import 'package:blog/utils/style/styles.dart';
 import 'package:blog/view/blog_post/pages/blog_post.dart';
-import 'package:blog/view_model/get_requests_vm.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 
 // ignore: must_be_immutable
 class CardWidget extends StatefulWidget {
@@ -20,10 +21,13 @@ class CardWidget extends StatefulWidget {
 class _CardWidgetState extends State<CardWidget> {
   @override
   Widget build(BuildContext context) {
+    var controllers = context.watch<PageIndexProvider>();
     return Padding(
       padding: const EdgeInsets.only(left: 0.0, right: 0.0, bottom: 25),
       child: GestureDetector(
         onTap: () {
+          controllers.changeUpdateStatus(true);
+
           Navigator.of(context).push(
             createRouteToLeft(
               BlogPost(widget.text, widget.index, widget.category),
@@ -57,12 +61,14 @@ class _CardWidgetState extends State<CardWidget> {
                       child: Text(
                         "${listaTitle[widget.index][0].toUpperCase()}${listaTitle[widget.index].substring(1)}",
                         style: cardTitleStyle,
+                        maxLines: controllers.related == true ? 1 : 2,
+                        overflow: TextOverflow.ellipsis,
                       ),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(left: 5.0),
                       child: Text(
-                        "${listaSubtitle[widget.index][0].toUpperCase()}${listaSubtitle[widget.index].substring(1)}",
+                        "${listaTitle[widget.index][0].toUpperCase()}${listaTitle[widget.index].substring(1)}",
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                         style: cardSubTitleStyle,
@@ -75,54 +81,6 @@ class _CardWidgetState extends State<CardWidget> {
           ),
         ),
       ),
-    );
-  }
-
-  FutureBuilder futureBuilderTitle() {
-    return FutureBuilder<dynamic>(
-      future: GetRequestsViewModel().getDataParagraphsViewModel(),
-      builder: (BuildContext context, var snapshot) {
-        if (snapshot.hasData) {
-          widget.text = snapshot.data;
-          var pom = snapshot.data[0].split(" ");
-          widget.title = pom[0] +
-              " " +
-              " " +
-              pom[1] +
-              " " +
-              " " +
-              pom[2] +
-              " " +
-              " " +
-              pom[3];
-          widget.subtitle = snapshot.data[0].substring(0, 120);
-
-          return Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding:
-                    const EdgeInsets.only(left: 5.0, top: 15.0, bottom: 8.0),
-                child: Text(
-                  widget.title,
-                  style: cardTitleStyle,
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 5.0),
-                child: Text(
-                  widget.subtitle,
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                  style: cardSubTitleStyle,
-                ),
-              )
-            ],
-          );
-        }
-        return Container();
-        // return Center(child: CircularProgressIndicator());
-      },
     );
   }
 }
