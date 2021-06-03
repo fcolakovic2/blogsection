@@ -15,14 +15,19 @@ class _BlogScreenState extends State<BlogScreen> {
   dynamic titleSubtitle;
   dynamic paragraphs;
   dynamic dates;
+  dynamic end;
 
   @override
   void initState() {
     super.initState();
 
     Random random = new Random();
+    end = GetRequestsViewModel().getDataAuthViewModel(random.nextInt(10));
 
-    imagee = GetRequestsViewModel().getDataImagesViewModel(random.nextInt(10));
+    for (var i = 0; i < cardsList.length; i++) {
+      imagee =
+          GetRequestsViewModel().getDataImagesViewModel(random.nextInt(10));
+    }
     for (var i = 0; i < cardsList.length; i++) {
       titleSubtitle = GetRequestsViewModel()
           .getDataTitleSubtitleViewModel(i)

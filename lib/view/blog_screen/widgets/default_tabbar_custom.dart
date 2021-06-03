@@ -65,7 +65,7 @@ class _TabBarSliderState extends State<TabBarSlider>
                   4,
                   (counter) => Padding(
                     padding: const EdgeInsets.only(left: 20.0, right: 20.0),
-                    child: widgetsList(widget.imagee)[counter],
+                    child: widgetsList()[counter],
                   ),
                 ),
               ),

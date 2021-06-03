@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
 class ListViewCustom extends StatefulWidget {
-  var cardsList, category, imagee;
-  ListViewCustom(this.cardsList, this.imagee, [this.category]);
+  var cardsList, category;
+  ListViewCustom(this.cardsList, [this.category]);
   @override
   _ListViewCustomState createState() => _ListViewCustomState();
 }

@@ -1,5 +1,4 @@
 import 'package:blog/utils/style/styles.dart';
-import 'package:blog/view_model/get_requests_vm.dart';
 import 'package:blog/utils/dummy_data/dummy_data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -33,19 +32,9 @@ class CircleAvatarAndText extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                FutureBuilder<dynamic>(
-                  future: GetRequestsViewModel().getDataImagesViewModel(index),
-                  builder: (BuildContext context, var snapshot) {
-                    if (snapshot.hasData) {
-                      return Text(
-                        "By ${snapshot.data["author"]}",
-                        style: avatarByWho,
-                      );
-                    }
-                    return Container();
-
-                    //return Center(child: CircularProgressIndicator());
-                  },
+                Text(
+                  "By ${listaAuth[index]}",
+                  style: avatarByWho,
                 ),
                 Row(
                   children: [
