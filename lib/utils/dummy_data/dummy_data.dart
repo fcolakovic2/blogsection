@@ -23,11 +23,11 @@ List<CardWidget> cardsList = [
 
 List<CardWidget> cardsListToShuffle = cardsList;
 
-List<Widget> widgetsList([images]) {
+List<Widget> widgetsList() {
   return [
-    ListViewCustom(cardsList, images),
-    ListViewCustom(cardsList, images, "EXPERIENCES"),
-    ListViewCustom(cardsList, images, "RECIPES"),
-    ListViewCustom(cardsList, images, "NEWS"),
+    ListViewCustom(cardsList),
+    ListViewCustom(cardsList, "EXPERIENCES"),
+    ListViewCustom(cardsList, "RECIPES"),
+    ListViewCustom(cardsList, "NEWS"),
   ];
 }
